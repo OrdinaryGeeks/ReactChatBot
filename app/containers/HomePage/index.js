@@ -33,6 +33,8 @@ import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 
+import SpeechChatBot from '../../components/SpeechChatBot';
+
 const key = 'home';
 
 export function HomePage({
@@ -79,6 +81,17 @@ export function HomePage({
           <H2>
             <FormattedMessage {...messages.trymeHeader} />
           </H2>
+          <SpeechChatBot />
+
+          <div>
+            <iframe
+              title="Nathans Chat"
+              allow="microphone;"
+              width="350"
+              height="430"
+              src="https://console.dialogflow.com/api-client/demo/embedded/9b105fde-fd30-460d-b8d3-79cab8515bca"
+            />
+          </div>
           <Form onSubmit={onSubmitForm}>
             <label htmlFor="username">
               <FormattedMessage {...messages.trymeMessage} />
